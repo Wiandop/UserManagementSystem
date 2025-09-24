@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Active Users</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/users.css">
+</head>
+<body>
+    <h1>Active Users</h1>
+    <a href="/">Back to Home</a>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Login</th>
+                <th>Money Amount</th>
+                <th>Card Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user[0] }}</td>
+                <td>{{ user[1] }}</td>
+                <td>${{ "%.2f"|format(user[2]) }}</td>
+                <td>{{ user[3] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

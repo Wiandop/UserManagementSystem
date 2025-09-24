@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Details</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/user_detail.css">
+</head>
+<body>
+    <h1>User Details</h1>
+    <a href="/">Back to Home</a>
+    
+    <div class="user-info">
+        <p><strong>ID:</strong> {{ user[0] }}</p>
+        <p><strong>Login:</strong> {{ user[1] }}</p>
+        <p><strong>Money Amount:</strong> ${{ "%.2f"|format(user[2]) }}</p>
+        <p><strong>Card Number:</strong> {{ user[3] }}</p>
+    </div>
+</body>
+</html>

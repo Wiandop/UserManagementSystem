@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title>User Management System</title>
+        <link rel="stylesheet" href="/static/css/style.css">
+        <link rel="stylesheet" href="/static/css/index.css">
+    </head>
+    <body>
+        <h1>User Management System</h1>
+
+        <div class="menu">
+            <a href="/users">View All Active Users</a>
+        </div>
+
+        <div class="search-form">
+            <h3>Search Users</h3>
+
+            <form action="/by-login" method="get">
+                <input type="text" name="login" placeholder="Enter User login" required>
+                <button type="submit">Search User by login</button>
+            </form>
+
+            <form action="/by-id" method="get">
+                <input type="text" name="id" placeholder="Enter User ID" required>
+                <button type="submit">Search User by ID</button>
+            </form>
+        </div>
+
+        <div class="examples">
+            <h3>Example Links</h3>
+
+            <a href="/by-login?login=admin">Search for admin</a>
+            <br>
+            <a href="/by-id?id=3">Search for user with ID=3</a>
+        </div>
+    </body>
+</html>
