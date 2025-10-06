@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+            
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    }
+
+.empty { 
+    color: #777; 
+    font-style: italic; 
+}
+
+a { 
+    color: #0077cc; 
+    text-decoration: none; 
+}
+
+a:hover { 
+    text-decoration: underline; 
+}
+
+input, button { 
+    padding: 6px 8px; 
+    margin: 4px; 
+}

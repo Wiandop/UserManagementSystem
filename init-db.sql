@@ -1,20 +1,24 @@
--- Creation of the database schema and initial data for a user management system
+-- Creation of the database and initial data for a user management system
+CREATE DATABASE IF NOT EXISTS app;
+USE app;
 
 -- Creation of the users table
-CREATE TABLE IF NOT EXISTS users (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    login TEXT NOT NULL UNIQUE,
-    money_amount REAL NOT NULL,
-    card_number TEXT NOT NULL,
-    status BIT NOT NULL
-);
+DROP TABLE IF EXISTS users;
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    login VARCHAR(255) NOT NULL UNIQUE,
+    money_amount DECIMAL(12, 2) NOT NULL,
+    card_number VARCHAR(20) NOT NULL,
+    status TINYINT(1) NOT NULL
+) ENGINE=InnoDB;
 
 -- Creation of the users_passwords table
-CREATE TABLE IF NOT EXISTS users_passwords (
-    user_id INTEGER PRIMARY KEY,
-    password TEXT NOT NULL,
+DROP TABLE IF EXISTS users_passwords;
+CREATE TABLE users_passwords (
+    user_id INT PRIMARY KEY,
+    password VARCHAR(255) NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id)
-);
+) ENGINE=InnoDB;
 
 -- Inserting initial data into the users table
 INSERT INTO users (login, money_amount, card_number, status) VALUES
